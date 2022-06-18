@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./static/styles.css" rel="stylesheet">
+  <title>Advanced Search</title>
+</head>
+<body class="bodyAdv">
+  <h1 class="head">Google</h1>
+  <h2 class="advSrch">Advanced Search</h2>
+  <button class="btnHome" onclick="window.location.href='/index.html';">Google Search</button>
+  <!-- Image Search button utilized adv btn placement this time -->
+  <button class="btnAdv" onclick="window.location.href='/image.html';">Image Search</button>
+  <form action="https://www.google.com/search">
+    <input class="barExact" type="text" name="as_q"><p>Find pages with this exact word or phrase!</p>
+    <input class="barAll" type="text" name="as_epq"><p>Find pages with all of these words!</p>
+    <input class="barAny" type="text" name="as_oq"><p>Find pages with any of these words!</p>
+    <input class="barNone" type="text" name="as_eq"><p>Find pages with none of these words!</p>
+    <input class="btnAdvS" type="submit" value="Advanced Search">
+  </form>
+</body>
+</html>

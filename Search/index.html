@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./static/styles.css" rel="stylesheet">
+  <title>Search</title>
+</head>
+<body>
+  
+  <!-- made the image link a button -->
+  <div class="imageDiv">
+    <button class="btnImg" onclick="window.location.href='/image.html';">Image Search</button>
+  </div>
+  
+  <!-- made advanced link with form/action -->
+  <div class="advancedDiv">
+    <form action="/advanced.html">
+      <button class="btnAdv" type="submit">Advanced Search</button>
+    </form>
+  </div>
+  
+  <div class="searchDiv">
+    <form action="https://www.google.com/search">
+      <input class="barSrch" type="text" name="q">
+      <input class="btnSrch" type="submit" value="Google Search">
+    </form>
+  </div>
+  
+  <div class="luckyDiv">
+    <button class="btnLuck" onclick="window.location.href='https://media3.giphy.com/media/plOk4BJPGosPNCmDWI/giphy.gif?cid=ecf05e47l0oj8t3phajcr7azar47ndrl1j2at7h3pydkqa8g&rid=giphy.gif&ct=g';">I'm Feeling Lucky</button>
+  </div>
+
+</body>
+</html>

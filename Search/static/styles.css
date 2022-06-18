@@ -1,0 +1,125 @@
+.btnImg, .btnHome {
+  position: absolute;
+  top: 0%;
+  left: 84%;
+  margin: 10px;
+  width: 7%;
+  height: 4%;
+  border-radius: 5px;
+}
+
+.btnAdv {
+  position: absolute;
+  top: 0%;
+  left: 92%;
+  margin: 10px;
+  width: 7%;
+  height: 4%;
+  border-radius: 5px;
+}
+
+.barSrch {
+  position: absolute;
+  top: 50%;
+  left: 37.5%;
+  margin: 5px;
+  width: 25%;
+  height: 4%;
+  border-radius: 10px;
+}
+
+.btnSrch {
+  position: absolute;
+  top: 55%;
+  left: 42%;
+  margin: 10px;
+  width: 7%;
+  height: 4%;
+  border-radius: 7px;
+}
+
+.btnLuck {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin: 10px;
+  width: 7%;
+  height: 4%;
+  border-radius: 7px;
+}
+
+.bodyAdv {
+  background-color: #222222;
+}
+
+.head {
+  position: absolute;
+  font: inherit;
+  font-size: 3em;
+  color: #ffffff;
+}
+
+.advSrch {
+  position: absolute;
+  top: 10%;
+  font: inherit;
+  font-size: 2em;
+  color: #ff2222;
+}
+
+.barExact {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  margin: 5px;
+  width: 25%;
+  height: 3%;
+  border-radius: 10px;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+.barAll {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  margin: 5px;
+  width: 25%;
+  height: 3%;
+  border-radius: 10px; 
+}
+
+.barAny {
+  position: absolute;
+  top: 35%;
+  left: 0%;
+  margin: 5px;
+  width: 25%;
+  height: 3%;
+  border-radius: 10px;
+}
+
+.barNone {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  margin: 5px;
+  width: 25%;
+  height: 3%;
+  border-radius: 10px;
+}
+
+.btnAdvS {
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  margin: 5px;
+  width: 10%;
+  height: 3%;
+  border-radius: 4px;
+  background-color: #8ab4f8;
+  border-color: #8ab4f8;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: #ff2222;
+}
