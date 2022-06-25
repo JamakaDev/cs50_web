@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <p>
+    {% for desc in description %}
+      {% if '*' in desc %}
+        <p style="font-weight: bold; font-size: 18pt">{{ desc }}</p>
+      {% else %}
+        <p style="font-size: 18pt">{{ desc }}</p>
+      {% endif %}
+    {% endfor %}
+    </p>
+{% endblock %}
