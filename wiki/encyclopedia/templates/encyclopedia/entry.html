@@ -1,13 +1,18 @@
 {% extends "encyclopedia/layout.html" %}
 
-{% block title %}
-    {{ title }}
+{% block title %}  
+  {{ title }}
 {% endblock %}
 
 {% block body %}
-    <h1 style="font-weight: bold; color: #690000">{{ title }}:</h1>
-    {% for desc in description %}
+  <h1 style="font-weight: bold; color: #690000">{{ title }}:</h1> 
+  <ol>
+  {% for desc in description %}
+    {% if title == 'Query Search' %}
+      <li class="desc" style="color:#696969"><a class="desc" href="/wiki/{{ desc }}">{{ desc }}</a><br></li>
+    {% else %}
       <p class="desc">{{ desc }}</p>
-    {% endfor %}
-
+    {% endif %}
+  {% endfor %}
+</ol>
 {% endblock %}
