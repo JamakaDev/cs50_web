@@ -5,13 +5,9 @@
 {% endblock %}
 
 {% block body %}
-    <p>
+    <h1 style="font-weight: bold; color: #690000">{{ title }}:</h1>
     {% for desc in description %}
-      {% if '*' in desc %}
-        <p style="font-weight: bold; font-size: 18pt">{{ desc }}</p>
-      {% else %}
-        <p style="font-size: 18pt">{{ desc }}</p>
-      {% endif %}
+      <p class="desc">{{ desc }}</p>
     {% endfor %}
-    </p>
+
 {% endblock %}
