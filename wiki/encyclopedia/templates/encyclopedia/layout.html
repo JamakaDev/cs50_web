@@ -17,14 +17,14 @@
                     <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
                     <input class="search" type="submit" name="qbtn" placeholder="Search Encyclopedia">
                 </form>
-                <div>
-                    <a href="{% url 'encyclopedia:index' %}">Home</a>
+                <div class="home_link">
+                    <a href="{% url 'encyclopedia:index' %}">Home Page</a>
                 </div>
-                <div>
-                    Create New Page
+                <div class="new_link">
+                    <a href="{% url 'encyclopedia:create' %}">Create Page</a>
                 </div>
-                <div>
-                    Random Page
+                <div class="random_link">
+                    <a href="{% url 'encyclopedia:random' %}">Random Page</a> 
                 </div>
                 {% block nav %}
                 {% endblock %}

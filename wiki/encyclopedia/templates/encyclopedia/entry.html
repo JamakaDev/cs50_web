@@ -7,12 +7,12 @@
 {% block body %}
   <h1 style="font-weight: bold; color: #690000">{{ title }}:</h1> 
   <ol>
-  {% for desc in description %}
-    {% if title == 'Query Search' %}
+  {% if title == 'Query Search' %}
+    {% for desc in description %}
       <li class="desc" style="color:#696969"><a class="desc" href="/wiki/{{ desc }}">{{ desc }}</a><br></li>
-    {% else %}
-      <p class="desc">{{ desc }}</p>
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% else %}
+    <p class="desc">{{ description }}</p>
+  {% endif %}
 </ol>
 {% endblock %}
