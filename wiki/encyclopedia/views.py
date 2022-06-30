@@ -19,7 +19,7 @@ def entry(request, title):
             for que in entries:
                 info = util.get_entry(que)
                 if query in info.upper():
-                    query_list.append(info.split()[2])
+                    query_list.append(que)
             return render(request, "encyclopedia/entry.html", {
                 'title': 'Query Search',
                 'description': query_list,
@@ -29,27 +29,40 @@ def entry(request, title):
         return render(request, "encyclopedia/error.html", {'title': tmp, 'entry': None})
     return render(request, "encyclopedia/entry.html", {
         'title': tmp,
-        'description': ' '.join(title.split()[2:])
+        'description': md(title)
     })
 
 def create(request):
     if request.method == "POST":
         title = request.POST['new_title'].capitalize()
         description = request.POST['new_entry']
-        if title in util.list_entries() or title == 'Css': 
+        if title in util.list_entries() or title in ('Css',"Html"): 
             return render(request, 'encyclopedia/error.html', {
                 'title': None,
                 'entry': title
             })
         with open(f'/home/jamakadev/Desktop/CS50_WEB/cs50_web/wiki/entries/{title}.md', 'w') as file:
-            file.write(md(f'# {title}\n\n'))
-            file.write(md(description))
-        return render(request, "encyclopedia/entry.html", {
-            "title": title,
-            "description": description
-        })
+            file.write(f'# {title}\n\n')
+            file.write(description)
+            return redirect(f"/wiki/{title}", title=title)
     return render(request, 'encyclopedia/create.html')
 
 def random(request):
     url = choice(util.list_entries())
     return redirect(f'wiki/{url}')
+
+def edit(request, name=None):
+    if request.method == 'POST':
+        title = request.POST['new_title']
+        description = request.POST['edit_entry'].split()[2:]
+        
+        with open(f'/home/jamakadev/Desktop/CS50_WEB/cs50_web/wiki/entries/{title}.md', 'w') as file:
+            file.write(f'# {title}\n\n')
+            file.write(' '.join(description))
+            return redirect(f"/wiki/{title}", title=title)
+    if not name: return render(request, "encyclopedia/error.html", {'title': 'Invalid', 'entry': None})
+    return render(request, "encyclopedia/edit.html", {
+        "name": name,
+        "info": util.get_entry(name),
+    })
+

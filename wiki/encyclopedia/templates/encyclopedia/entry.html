@@ -5,14 +5,19 @@
 {% endblock %}
 
 {% block body %}
-  <h1 style="font-weight: bold; color: #690000">{{ title }}:</h1> 
-  <ol>
-  {% if title == 'Query Search' %}
-    {% for desc in description %}
-      <li class="desc" style="color:#696969"><a class="desc" href="/wiki/{{ desc }}">{{ desc }}</a><br></li>
-    {% endfor %}
-  {% else %}
-    <p class="desc">{{ description }}</p>
-  {% endif %}
-</ol>
+  <div class="desc">
+    {% if title == "Query Search" %}
+      <ul>
+        {% for desc in description %}
+          <a href="{% url 'encyclopedia:entry' title=desc %}"><li style="font-size: 20pt">{{ desc }}</li></a>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ description|safe }}  
+    {% endif %}
+    
+    
+    <button name="{{ title }}" id="edit_btn"><a href="{% url 'encyclopedia:edit' name=title %}">Edit {{ title }}</a></button>
+  </div>
 {% endblock %}
+
