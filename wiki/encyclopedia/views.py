@@ -54,15 +54,15 @@ def random(request):
 def edit(request, name=None):
     if request.method == 'POST':
         title = request.POST['new_title']
-        description = request.POST['edit_entry'].split()[2:]
+        description = request.POST['edit_entry']
         
         with open(f'/home/jamakadev/Desktop/CS50_WEB/cs50_web/wiki/entries/{title}.md', 'w') as file:
             file.write(f'# {title}\n\n')
-            file.write(' '.join(description))
+            file.write(description)
             return redirect(f"/wiki/{title}", title=title)
     if not name: return render(request, "encyclopedia/error.html", {'title': 'Invalid', 'entry': None})
     return render(request, "encyclopedia/edit.html", {
         "name": name,
-        "info": util.get_entry(name),
+        "info": " ".join(util.get_entry(name).split()[2:]),
     })
 
