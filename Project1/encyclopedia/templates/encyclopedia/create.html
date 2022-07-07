@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+  Create New Page
+{% endblock %}
+
+{% block body %}
+  <h1 style="text-align: center; color:darkslategrey">Create New Entry for Encyclopedia</h1>
+  <!-- <form action="{% url encyclopedia:entry title=title" id="new_form"> -->
+  <form action="{% url 'encyclopedia:create' %}" method="post" id="new_form">
+    {% csrf_token %}
+    <label id="new_label" for="new">Create Encyclopedia Entry -> </label>
+    <input id="new_title" name="new_title" type="text" placeholder="Title of Entry:" maxlength="48" required>
+    <input id="submit_entry" type="submit" value="Submit for Review">
+    <textarea name="new_entry" id="new_entry" placeholder="Enter the information for this entry into the encyclopedia:" required></textarea>
+  </form>
+{% endblock %}

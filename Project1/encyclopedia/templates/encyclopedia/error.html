@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+  Inquiry Error
+{% endblock %}
+
+{% block nav %}
+{% endblock %}
+
+{% block body %}
+  <h1 style="font-weight: bold">Sorry</h1>
+  {% if title %}
+  <p>The {{ title }} entry could not be found!</p>
+  {% else %}
+  <p>The {{ entry }} entry is already in the database!</p>
+  {% endif %}
+{% endblock %}

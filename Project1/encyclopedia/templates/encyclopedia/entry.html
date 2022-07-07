@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}  
+  {{ title }}
+{% endblock %}
+
+{% block body %}
+  <div class="desc">
+    {% if title == "Query Search" %}
+      <ul>
+        {% for desc in description %}
+          <a href="{% url 'encyclopedia:entry' title=desc %}"><li style="font-size: 20pt">{{ desc }}</li></a>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ description|safe }}  
+    {% endif %}
+    
+    
+    <button name="{{ title }}" id="edit_btn"><a href="{% url 'encyclopedia:edit' name=title %}">Edit {{ title }}</a></button>
+  </div>
+{% endblock %}
+

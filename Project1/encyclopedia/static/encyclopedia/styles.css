@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    color: #ff2000;
+    margin-top: 0px;
+    padding-top: 20px;
+    text-shadow: -2px 2px 2px #000000 ;
+}
+
+textarea {
+    height: 90vh;
+    width: 80%;
+}
+
+.bold {
+    color:#000000;
+    text-shadow: 2px 2px 2px #ffff00";
+}
+
+.main {
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+.desc {
+    color: #0000ff;
+    font-weight: bold;
+    font-size: 20pt;
+    text-shadow: -2px 2px 2px #abcdef;
+}
+
+#edit_btn {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-image: linear-gradient(to right,pink,#abcdef);
+    text-shadow: -2px 2px 2px #00ff69 ;
+}

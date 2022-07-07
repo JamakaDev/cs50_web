@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1 style="font-size: 36pt;padding: 20px; background-color: #092E20;color: #ffffff;">All Available Pages via Fiki-Wiki</h1>
+    <ul>
+        {% for entry in entries %}
+            <a href="{% url 'encyclopedia:entry' title=entry %}"><li style="font-size: 20pt">{{ entry }}</li></a>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
