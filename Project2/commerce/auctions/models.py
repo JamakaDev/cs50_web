@@ -4,3 +4,19 @@ from django.db import models
 
 class User(AbstractUser):
     pass
+
+
+class Listings:
+    pass
+
+
+class Bids:
+    pass
+
+
+class Comments:
+    pass
+
+
+class Images:
+    pass
