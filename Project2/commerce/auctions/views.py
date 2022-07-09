@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -8,7 +9,12 @@ from .models import User
 
 
 def index(request):
-    return render(request, "auctions/index.html")
+    return render(request, "auctions/index.html", {
+        'title': 'Test',
+        'description': 'This is the description for the listing. The owner can put their details and information here.',
+        'image': "static/auctions/turntTurtle.jpg",
+        'range': range(10)
+    })
 
 
 def login_view(request):
@@ -62,10 +68,20 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-
+@login_required
 def create(request):
-    return render(request, 'auctions/create.html')
+    return render(request, 'auctions/create.html', {
+        'categories': ['Apparel','Electronics','Household','Vehicles']
+    })
 
 
 def listing(request):
     return render(request, 'auctions/listing.html')
+
+
+def categories(request):
+    return render(request, "auctions/categories.html")
+
+
+def watchlist(request):
+    return render(request, "auctions/watchlist.html")

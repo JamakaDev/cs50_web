@@ -18,5 +18,5 @@ class Comments:
     pass
 
 
-class Images:
+class Watchlist:
     pass
