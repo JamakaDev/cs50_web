@@ -6,17 +6,19 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap');</style>
     </head>
     <body>
-        <h1>Auctions</h1>
-        <div>
+        <h1 class="h1">Auctions with Options</h1>
+        <div style="color: #abcdef; font-size: 20pt; margin-left: 1%; text-shadow: 1px 1px 1px #3d3d3d;">
             {% if user.is_authenticated %}
-                Signed in as <strong>{{ user.username }}</strong>.
+                Signed in as >> <strong>{{ user.username }}</strong>
             {% else %}
                 Not signed in.
             {% endif %}
         </div>
-        <ul class="nav">
+    
+        <ul class="nav" style="text-shadow: 1px 1px #79b2ec; font-size: 16pt">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
             </li>
@@ -43,7 +45,13 @@
             {% endif %}
         </ul>
         <hr>
-        {% block body %}
+        <div class="header">
+        {% block header %}
         {% endblock %}
+        </div>
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
     </body>
 </html>

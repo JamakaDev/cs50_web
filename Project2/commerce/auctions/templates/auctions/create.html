@@ -2,35 +2,50 @@
 
 {% block title %}Create{% endblock %}
 
-{% block body %}
-  <h1>Create Listing</h1>
-  
-  <div class="mb-3">
-    <label for="titleForm" class="form-label">Title of Listing</label>
-    <input type="text" class="form-control" id="titleForm" style="width: 50%">
-  </div>
-  
-  <div class="mb-3">
-    <label for="listingDescription" class="form-label">Description of Listing</label>
-    <textarea class="form-control" id="listingDescription" rows="10" style="width: 50%"></textarea>
-  </div>
-  
-  <div class="mb-3">
-    <label for="imgUrl" class="form-label">Image</label>
-    <input type="text" class="form-control" id="imgUrl" placeholder="(Optional) Image URL" style="width: 50%;">
-  </div>
-  
-  <div class="mb-3">
-    <label for="bidPrice" class="form-label">Price of Listing</label>
-    <input type="number" class="form-control" id="bidPrice" placeholder="Starting Bid Price" style="width: 25%;">
-  </div>
+{% block header %}
+  <h1 id="create-h1">Create Auction Listing</h1>
+{% endblock %}
 
-  <div class="mb-3">
-    <select class="form-select" aria-label="Default select category">
-      <option selected>Select category</option>
-      {% for category in categories %}
-        <option value="{{ category }}">{{ category }}</option>
-      {% endfor %}
-    </select>
-  </div>
+{% block body %}
+
+  <form action="{% url 'listing' %}">
+    <div class="container-lg">
+      <div class="row row-cols-1">
+        <form-title class="mb-3 col">
+          <label for="titleForm" class="form-label">Title of Listing</label>
+          <input name="title" type="text" class="form-control" id="titleForm" >
+        </form-title>
+        
+        <form-desc class="mb-3 col">
+          <label for="listingDescription" class="form-label">Description of Listing</label>
+          <textarea name="description" class="form-control" id="listingDescription" rows="10" ></textarea>
+        </form-desc>
+        
+        <form-img class="mb-3 col">
+          <label for="imgUrl" class="form-label">Image of Listing</label>
+          <input name="image" type="text" class="form-control" id="imgUrl" placeholder="(Optional) Image URL" >
+        </form-img>
+      </div>
+      <div class="row row-cols-3">
+        
+        <form-bid class="mb-3 col">
+          <input name="bid" type="number" class="form-control" id="bidPrice" placeholder="Enter Starting Bid">
+        </form-bid>
+
+        <form-cate class="mb-3 col">
+          <select style="box-shadow:2px 2px #696969;" name="category" class="form-select" aria-label="Default select category">
+            <option selected>Select category</option>
+            {% for category in categories %}
+              <option value="category">{{ category }}</option>
+            {% endfor %}
+          </select>
+        </form-cate>
+
+        <form-submit class="mb-3 col">
+          <input style="margin-right: 5%;box-shadow: 2px 2px #696969;" type="reset" value="Reset Listing">
+          <input style="box-shadow: 2px 2px #696969;" type="submit" value="Submit Listing">
+        </form-submit>
+      </div>
+    </div>
+  </form>
 {% endblock %}

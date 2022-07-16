@@ -7,8 +7,6 @@ class User(AbstractUser):
 
 
 class Bid(models.Model):
-    starting_bid = models.DecimalField(max_digits=15, decimal_places=2, default=1.00)
-    previous_bid = models.DecimalField(max_digits=15, decimal_places=2, default=0.00)
     current_bid = models.DecimalField(max_digits=15, decimal_places=2, default=0.00)
     total_bids = models.PositiveSmallIntegerField(name='total_bids')
     duration = models.DateTimeField(name='end_date')
@@ -37,10 +35,10 @@ class Listing(models.Model):
     condition = models.CharField(max_length=5)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bid = models.ForeignKey(Bid, on_delete=models.CASCADE)
-    comments = models.ForeignKey(Comment, on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return self.title
+        return f'Listing: {self.title}'
 
 
 class Watchlist(models.Model):
